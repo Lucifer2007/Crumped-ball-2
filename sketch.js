@@ -11,14 +11,6 @@ var ground;
 function preload()
 {
 
-	
-
-
-
-
-
-
-	
 }
 
 function setup() {
@@ -29,7 +21,7 @@ function setup() {
 	world = engine.world;
 
 	//Create the Bodies Here.
-	ball = new Ball(200,450,5,10);
+	ball = new Ball(200,450,5);
 	
 	ground = new Ground(width/2,690,1900,20);
 
@@ -46,6 +38,9 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background("lightblue");
+Engine.update(engine);
+
+
   
   fill("yellow");
   stroke(500);
@@ -61,15 +56,16 @@ function draw() {
   
   log2.display();
  
+
  
-  Keypressed();
+  
 }
 
-function Keypressed(){
+function KeyPressed(){
 
-if(keyCode === UP_ARROW){
+if(keyCode === "UP_ARROW"){
 
-Matter.Body.applyForce(ball.body,ball.body.position,{x:1,y:-1});
+Matter.Body.applyForce(ball.body,ball.body.position,{x:85,y:-85});
 
 
 
